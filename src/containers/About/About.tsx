@@ -4,19 +4,20 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image, { StaticImageData } from 'next/image'
 import { images } from '@/constants'
-import { client } from '@/client'
+import { client, urlFor } from '@/client'
+import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
 interface Abouts {
   title: string,
   description: string,
-  imgUrl: StaticImageData
+  imgUrl: SanityImageSource
 }
 
-const abouts = [
-  { title: 'Frontend', description: 'I\'m good in Frontend', imgURL: images.about01 },
-  { title: 'Backend', description: 'I\'m good in Backend', imgURL: images.about02 },
-  { title: 'Fullstack', description: 'I\'m good in Fullstack', imgURL: images.about03 },
-]
+// const abouts = [
+//   { title: 'Frontend', description: 'I\'m good in Frontend', imgUrl: images.about01 },
+//   { title: 'Backend', description: 'I\'m good in Backend', imgUrl: images.about02 },
+//   { title: 'Fullstack', description: 'I\'m good in Fullstack', imgUrl: images.about03 },
+// ]
 
 const About = () => {
   const [abouts, setAbouts] = useState<[Abouts]>()
@@ -25,7 +26,7 @@ const About = () => {
       const query = `*[_type == "abouts"]`
       client.fetch(query).then((data) => setAbouts(data))
   }, [])
-  console.log(abouts)
+
   return (
     <>
       <h2 className='head-text'>
@@ -45,7 +46,8 @@ const About = () => {
             transition={{ duration: 0.5, type: 'tween' }}
             className='app__profile-item'
           >
-            <Image src={el.imgUrl} alt={el.title} />
+            <Image src={urlFor(el.imgUrl).url()} width={1200} height={900} alt={el.title} />
+            {/* <Image src={el.imgUrl} alt={el.title} /> */}
             <h2 className='bold-text' style={{ marginTop: '20px' }}>{el.title}</h2>
             <p className='p-text' style={{ marginTop: '10px' }}>{el.description}</p>
           </motion.div>

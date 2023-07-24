@@ -1,6 +1,4 @@
-import { client } from '@/client'
 import { About, Header, Skills, Testimonial, Work } from '@/containers'
-import { StaticImageData } from 'next/image';
 
 export default function Home() {
   return (
