@@ -27,7 +27,7 @@
       padding-top: 8rem;
     }
   
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 768px) {
       flex-direction: column;
     }
   
@@ -38,6 +38,7 @@
   
   .app__header-info {
     flex: 0.65;
+    width: 33%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -46,7 +47,7 @@
   
     margin: 0 2rem;
   
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 768px) {
       width: 100%;
       margin: 0rem;
     }
