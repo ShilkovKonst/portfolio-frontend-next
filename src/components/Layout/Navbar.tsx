@@ -6,6 +6,7 @@ import { images } from '@/constants'
 import Link from 'next/link'
 import { HiMenuAlt4, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion'
+import SmoothLink from '../SmoothLink'
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
@@ -17,7 +18,7 @@ const Navbar = () => {
             <ul className='app__navbar-links'>
                 {['home', 'about', 'skills', 'testimonials', 'contact'].map((el, index) => (
                     <li className='app__flex p-text' key={index}>
-                        <Link href={`#${el}`}>{el}</Link>
+                        <SmoothLink href={`#${el}`}>{el}</SmoothLink>
                         <div />
                     </li>
                 ))}
@@ -36,7 +37,7 @@ const Navbar = () => {
                             {['home', 'about', 'skills', 'testimonials', 'contact'].map((el, index) => (
                                 <li key={index}>
                                     <div />
-                                    <Link href={`#${el}`} onClick={() => setToggle(false)}>{el}</Link>
+                                    <SmoothLink href={`#${el}`} onClick={() => setToggle(false)}>{el}</SmoothLink>
                                 </li>
                             ))}
                         </ul>
