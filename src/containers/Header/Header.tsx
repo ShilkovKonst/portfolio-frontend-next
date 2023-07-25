@@ -4,8 +4,9 @@ import { motion } from 'framer-motion'
 import { images } from '@/constants'
 import './Header.scss'
 import Image from 'next/image'
+import { AppWrap } from '@/wrapper'
 
-const Header = () => {
+const Header: React.FC = () => {
 
   const scaleVariants = {
     whileInView: {
@@ -71,4 +72,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default AppWrap({children: <Header />, idName:'home', classNames:''})

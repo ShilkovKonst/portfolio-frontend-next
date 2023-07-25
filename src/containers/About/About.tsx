@@ -6,6 +6,7 @@ import Image, { StaticImageData } from 'next/image'
 import { images } from '@/constants'
 import { client, urlFor } from '@/client'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
+import { AppWrap } from '@/wrapper'
 
 interface Abouts {
   title: string,
@@ -19,7 +20,7 @@ interface Abouts {
 //   { title: 'Fullstack', description: 'I\'m good in Fullstack', imgUrl: images.about03 },
 // ]
 
-const About = () => {
+const About: React.FC = () => {
   const [abouts, setAbouts] = useState<[Abouts]>()
 
   useEffect(() => {
@@ -57,4 +58,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AppWrap({children: <About/>, idName: 'about', classNames: ''})
