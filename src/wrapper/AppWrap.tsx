@@ -14,7 +14,7 @@ const AppWrap = <T extends {}>({children, idName, classNames }:AppWrapProps & T)
             <div className="app__wrapper app__flex">
                 {children}
                 <div className="copyright">
-                    <p className="p-text">@2020 MICHAEL</p>
+                    <p className="p-text">@2023 Konstantin Shilkov</p>
                     <p className="p-text">All rights reserved</p>
                 </div>
             </div>
