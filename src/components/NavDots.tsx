@@ -9,7 +9,7 @@ interface NavDotsProps {
 const NavDots = ({ active }: NavDotsProps) => {
     return (
         <div className='app__navigation'>
-            {['home', 'about', 'skills', 'testimonials', 'contact'].map((el, index) => (
+            {['home', 'about', 'work', 'skills', 'testimonials', 'contact'].map((el, index) => (
                 <SmoothLink
                     key={index}
                     href={`#${el}`}

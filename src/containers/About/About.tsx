@@ -20,7 +20,7 @@ interface Abouts {
 // ]
 
 const About: React.FC = () => {
-  const [abouts, setAbouts] = useState<[Abouts]>()
+  const [abouts, setAbouts] = useState<Abouts[]>()
 
   useEffect(() => {
       const query = `*[_type == "abouts"]`
