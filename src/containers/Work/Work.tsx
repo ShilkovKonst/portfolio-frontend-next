@@ -85,7 +85,7 @@ const Work = () => {
               transition={{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
               className='app__work-hover app__flex'
             >
-              {work.projectLink !== '' &&
+              {work.projectLink &&
                 <Link href={work.projectLink} target='_blank' rel='noreferrer'>
                   <motion.div
                     // initial={{ scale: 0 }}
