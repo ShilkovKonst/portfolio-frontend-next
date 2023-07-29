@@ -14,10 +14,11 @@ const AppWrap = <T extends {}>({ children, idName, classSection, classBG }: AppW
         <div id={idName} className={`app__container ${classBG}`}>
             <SocialMedia />
             <div className="app__wrapper app__flex">
-                {idName === 'home'
+                {idName !== 'home'
                     ?
                     <motion.div
-                        whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+                        initial={{y: 100, opacity: 0}}
+                        whileInView={{ y: [50, 0], opacity: [0, 1] }}
                         transition={{ duration: 0.5 }}
                         className={`${classSection} app__flex`}
                     >
