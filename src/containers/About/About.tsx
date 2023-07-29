@@ -13,12 +13,6 @@ interface Abouts {
   imgUrl: SanityImageSource
 }
 
-// const abouts = [
-//   { title: 'Frontend', description: 'I\'m good in Frontend', imgUrl: images.about01 },
-//   { title: 'Backend', description: 'I\'m good in Backend', imgUrl: images.about02 },
-//   { title: 'Fullstack', description: 'I\'m good in Fullstack', imgUrl: images.about03 },
-// ]
-
 const About: React.FC = () => {
   const [abouts, setAbouts] = useState<Abouts[]>()
 
@@ -47,7 +41,6 @@ const About: React.FC = () => {
             className='app__profile-item'
           >
             <Image src={urlFor(el.imgUrl).url()} width={1200} height={900} alt={el.title} />
-            {/* <Image src={el.imgUrl} alt={el.title} /> */}
             <h2 className='bold-text' style={{ marginTop: '20px' }}>{el.title}</h2>
             <p className='p-text' style={{ marginTop: '10px' }}>{el.description}</p>
           </motion.div>
@@ -57,4 +50,4 @@ const About: React.FC = () => {
   )
 }
 
-export default AppWrap({children: <About/>, idName: 'about', classNames: ''})
+export default AppWrap({children: <About/>, idName: 'about', classBG: 'app__whitebg', classSection: 'app__about'})

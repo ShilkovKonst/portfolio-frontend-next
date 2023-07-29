@@ -23,7 +23,7 @@ interface work {
   tags: string[]
 }
 
-const Work = () => {
+const Work: React.FC = () => {
 
   const [activeFilter, setActiveFilter] = useState<string>('All')
   const [animateCard, setAnimateCard] = useState<animateCard>({ y: 0, opacity: 1 })
@@ -128,4 +128,4 @@ const Work = () => {
   )
 }
 
-export default AppWrap({ children: <Work />, idName: 'work', classNames: '' })
+export default AppWrap({ children: <Work />, idName: 'work', classBG: 'app__primarybg', classSection: 'app__works' })

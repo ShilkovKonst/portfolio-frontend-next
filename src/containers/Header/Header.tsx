@@ -20,7 +20,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <div id='home' className='app__header app__flex'>
+    <>
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ x: [-100, 0], opacity: 1 }}
@@ -68,8 +68,8 @@ const Header: React.FC = () => {
           </div>
         ))}
       </motion.div>
-    </div>
+    </>
   )
 }
 
-export default AppWrap({children: <Header />, idName:'home', classNames:''})
+export default AppWrap({children: <Header />, idName:'home', classBG: 'app_primarybg', classSection: 'app__header'})
