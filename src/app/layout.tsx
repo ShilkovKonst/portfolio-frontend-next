@@ -1,4 +1,4 @@
-import { Footer, Navbar } from '@/components'
+import { Navbar } from '@/components'
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 
@@ -25,7 +25,6 @@ export default function RootLayout({
       <body className={`${roboto.className} app`}>
         <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   )

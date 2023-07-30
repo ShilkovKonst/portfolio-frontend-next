@@ -8,7 +8,9 @@ import about01 from '@/assets/about01.png'
 import about02 from '@/assets/about02.png'
 import about03 from '@/assets/about03.png'
 import about04 from '@/assets/about04.png'
+import mail from '@/assets/email.png'
+import phone from '@/assets/mobile.png'
 
-const images = {logo, profile, circle, sass, flutter, redux, about01, about02, about03, about04}
+const images = {logo, profile, circle, sass, flutter, redux, about01, about02, about03, about04, mail, phone}
 
 export default images
