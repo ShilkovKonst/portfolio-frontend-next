@@ -13,9 +13,10 @@ const SmoothLink = ({ children, ...props }: ScrollLinkProps) => {
     //remove everything before the hash
     const targetId = e.currentTarget.href.replace(/.*\#/, "");
     const elem = document.getElementById(targetId);
-    console.log(elem?.getBoundingClientRect())
+    const topPos = elem?.getBoundingClientRect().top
+    topPos &&
     window.scrollTo({
-      top: elem?.getBoundingClientRect().top,
+      top: topPos + window.scrollY,
       behavior: "smooth",
     });
   };
