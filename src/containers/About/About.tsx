@@ -1,15 +1,32 @@
 'use client'
 import './About.scss'
-import React, { useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { client, urlFor } from '@/client'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 import { AppWrap } from '@/wrapper'
 
+interface Span {
+  _key: string,
+  _type: 'span',
+  marks: string[],
+  text: string
+}
+
+interface Block {
+  _key: string,
+  _type: 'block',
+  children: ReactNode[],
+  markDefs: any[],
+  level: number,
+  listItem: string,
+  sryle: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote'
+}
+
 interface Abouts {
   title: string,
-  description: string,
+  description: string[],
   imgUrl: SanityImageSource
 }
 
@@ -17,9 +34,10 @@ const About: React.FC = () => {
   const [abouts, setAbouts] = useState<Abouts[]>()
 
   useEffect(() => {
-      const query = `*[_type == "abouts"]`
-      client.fetch(query).then((data) => setAbouts(data))
+    const query = `*[_type == "abouts"]`
+    client.fetch(query).then((data) => setAbouts(data))
   }, [])
+  console.log(abouts)
 
   return (
     <>
@@ -40,9 +58,12 @@ const About: React.FC = () => {
             transition={{ duration: 0.5, type: 'tween' }}
             className='app__profile-item'
           >
-            <Image src={urlFor(el.imgUrl).url()} width={1200} height={900} alt={el.title} />
+            <Image src={urlFor(el.imgUrl).url()} width={960} height={540} alt={el.title} />
             <h2 className='bold-text' style={{ marginTop: '20px' }}>{el.title}</h2>
-            <p className='p-text' style={{ marginTop: '10px' }}>{el.description}</p>
+            {el.description?.map((el, i) => (
+              <p key={i} className='p-text' style={{ marginTop: '10px' }}>{el}</p>
+            ))}
+
           </motion.div>
         ))}
       </div>
@@ -50,4 +71,4 @@ const About: React.FC = () => {
   )
 }
 
-export default AppWrap({children: <About/>, idName: 'about', classBG: 'app__whitebg', classSection: 'app__about'})
+export default AppWrap({ children: <About />, idName: 'about', classBG: 'app__whitebg', classSection: 'app__about' })

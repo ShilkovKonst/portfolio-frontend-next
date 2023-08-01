@@ -4,10 +4,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
-
-  @media screen and (min-width: 769px) {
-    height: calc(100dvh - 4rem);
-  }
   // disable the default padding styles
   .app__wrapper {
     padding: 0;
@@ -137,7 +133,7 @@
   justify-content: space-evenly;
   align-items: flex-start;
   height: 100%;
-  margin-left: 1rem;
+  margin-left: auto;
 
   div {
     width: 100px;
