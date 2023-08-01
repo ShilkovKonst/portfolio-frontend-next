@@ -15,13 +15,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  img {
-    width: 3rem;
-    height: 3rem;
-    @media screen and (min-width: 1600px) {
-      width: 6rem;
-      height: 6rem;
-    }
+  width: 3rem;
+  height: 3rem;
+  @media screen and (min-width: 1600px) {
+    width: 6rem;
+    height: 6rem;
   }
 }
 

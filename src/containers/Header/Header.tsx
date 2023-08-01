@@ -29,15 +29,14 @@ const Header: React.FC = () => {
       >
         <div className='app__header-badge'>
           <div className='badge-cmp app__flex'>
-            <span>👋</span>
             <div style={{ marginLeft: 20 }}>
-              <p className='p-text'>Hello, I am</p>
+              <p className='p-text'>Salut, je m&#39;appelle</p>
               <h1 className='head-text'>Konstantin</h1>
             </div>
           </div>
           <div className='tag-cmp app__flex'>
-            <p className='p-text'>Fullstack Web Developer</p>
-            <p className='p-text'>In search of alternance</p>
+            <p className='p-text'>Développeur Web Fullstack</p>
+            <p className='p-text'>En recherche d&#39;alternance</p>
           </div>
         </div>
       </motion.div>
@@ -47,7 +46,7 @@ const Header: React.FC = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className='app__header-img'
       >
-        <Image src={images.profile} alt='profile' />
+        <Image src={images.profile} alt='profile' width={500} height={625}/>
         <motion.div
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: 'easeInOut' }}
@@ -62,7 +61,7 @@ const Header: React.FC = () => {
         whileInView={scaleVariants.whileInView}
         className='app__header-circles'
       >
-        {[images.flutter, images.redux, images.sass].map((img, index) => (
+        {[images.html, images.javascript, images.css].map((img, index) => (
           <div className='corcle-cmp app__flex' key={index}>
             <Image src={img} alt={`img${index}`} />
           </div>

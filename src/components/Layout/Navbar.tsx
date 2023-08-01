@@ -7,6 +7,8 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 import SmoothLink from '../SmoothLink'
 
+const headers = [{name: 'accueil', link: 'home'}, {name: 'à propos', link: 'about'}, {name: 'projets', link: 'work'}, {name: 'compétences', link: 'skills'}, {name: 'témoignage', link: 'testimonials'}, {name: 'contact', link: 'contact'}]
+
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
     return (
@@ -15,9 +17,9 @@ const Navbar = () => {
                 <Image src={images.logo} alt="logo" />
             </div>
             <ul className='app__navbar-links'>
-                {['home', 'about', 'skills', 'testimonials', 'contact'].map((el, index) => (
+                {headers.map((el, index) => (
                     <li className='app__flex p-text' key={index}>
-                        <SmoothLink href={`#${el}`}>{el}</SmoothLink>
+                        <SmoothLink href={`#${el.link}`}>{el.name}</SmoothLink>
                         <div />
                     </li>
                 ))}
@@ -33,10 +35,10 @@ const Navbar = () => {
                     >
                         <HiX onClick={() => setToggle(false)} />
                         <ul>
-                            {['home', 'about', 'skills', 'testimonials', 'contact'].map((el, index) => (
+                            {headers.map((el, index) => (
                                 <li key={index}>
                                     <div />
-                                    <SmoothLink href={`#${el}`} onClick={() => setToggle(false)}>{el}</SmoothLink>
+                                    <SmoothLink href={`#${el.link}`} onClick={() => setToggle(false)}>{el.name}</SmoothLink>
                                 </li>
                             ))}
                         </ul>
