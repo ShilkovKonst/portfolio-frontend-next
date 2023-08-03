@@ -12,7 +12,7 @@
   margin-top: 2rem;
 }
 .app__profile-item {
-  width: 190px;
+  width: 250px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -26,7 +26,7 @@
   @media screen and (min-width: 1201px) {
     width: 380px;
     min-height: 340px;
-    margin: 2rem 4rem;
+    // margin: 2rem 4rem;
   }
   @media screen and (max-width: 700px) {
     width: 100%;

@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { client, urlFor } from '@/client'
 import Image from 'next/image'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
-import Link from 'next/link'
 import './Skills.scss'
 
 interface skill {

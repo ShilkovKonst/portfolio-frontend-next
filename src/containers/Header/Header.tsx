@@ -46,7 +46,7 @@ const Header: React.FC = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className='app__header-img'
       >
-        <Image src={images.profile} alt='profile' width={500} height={625}/>
+        <Image src={images.profile} alt='profile' width={500} />
         <motion.div
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: 'easeInOut' }}

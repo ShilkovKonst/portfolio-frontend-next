@@ -78,7 +78,7 @@ const Work: React.FC = () => {
           className='app__work-item app__flex'
         >
           <div className='app__work-img app-flex'>
-            <Image alt={work.title} src={urlFor(work.imgUrl).url()} width={200} height={100} />
+            <Image alt={work.title} src={urlFor(work.imgUrl).url()} width={150} height={200} />
             <motion.div
               // initial={{ opacity: 0 }}
               whileHover={{ opacity: [0, 1] }}
