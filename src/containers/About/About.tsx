@@ -109,19 +109,12 @@ const About: React.FC = () => {
                 <Link
                   key={i}
                   href={activity.link} target='_blank'
-                  className='app__abouts-activities-item app__flex'>
-                  {/* <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                  > */}
-
-                  <div className='app__flex' style={{ backgroundColor: '#dff4f5' }}>
+                  className='app__abouts-activities-item app__flex'
+                >
+                  <div>
                     <Image src={urlFor(activity.imgUrl).url()} alt={activity.title} width={75} height={75} />
                   </div>
                   <p className='p-text'>{activity.title}</p>
-
-                  {/* </motion.div> */}
                 </Link>
               ))}
             </div>

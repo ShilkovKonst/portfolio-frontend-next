@@ -33,15 +33,7 @@ const Work: React.FC = () => {
 
   const handleWorkFilter = (tag: string) => {
     setActiveFilter(tag)
-    setAnimateCard({ y: 100, opacity: 0 })
-    setTimeout(() => {
-      setAnimateCard({ y: 0, opacity: 1 })
-      if (activeFilter === 'All') setFilterWorks(works)
-      else {
-        const filtered = works.filter((work: work) => work.tags.includes(tag))
-        setFilterWorks(filtered)
-      }
-    }, 500);
+
   }
 
   useEffect(() => {
@@ -53,6 +45,18 @@ const Work: React.FC = () => {
       setTags(rawTags.filter((el: string, i: number) => rawTags.indexOf(el) === i))
     })
   }, [])
+
+  useEffect(() => {
+    setAnimateCard({ y: 100, opacity: 0 })
+    setTimeout(() => {
+      setAnimateCard({ y: 0, opacity: 1 })
+      if (activeFilter === 'All') setFilterWorks(works)
+      else {
+        const filtered = works.filter((work: work) => work.tags.includes(activeFilter))
+        setFilterWorks(filtered)
+      }
+    }, 500);
+  }, [activeFilter, works])
 
   return (<>
     <h2 className='head-text'>
