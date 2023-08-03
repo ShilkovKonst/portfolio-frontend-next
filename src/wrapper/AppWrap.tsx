@@ -32,17 +32,15 @@ const AppWrap = <T extends {}>({ children, idName, classSection, classBG }: AppW
                         {children}
                     </div>
                 }
-                <div className='footer'>
-                    {idName === 'contact' &&
-                        <>
-                            <SocialMedia classDiv='app__social-footer' />
-                            <div className="copyright">
-                                <p className="p-text">@2023 Konstantin Shilkov</p>
-                                <p className="p-text">All rights reserved</p>
-                            </div>
-                        </>
-                    }
-                </div>
+                {idName === 'contact' &&
+                    <div className='footer'>
+                        <SocialMedia classDiv='app__social-footer' />
+                        <div className="copyright">
+                            <p className="p-text">@2023 Konstantin Shilkov</p>
+                            <p className="p-text">All rights reserved</p>
+                        </div>
+                    </div>
+                }
             </div>
             <NavDots active={idName} />
         </div>
