@@ -34,7 +34,7 @@ const Navbar = () => {
             <ul className='app__navbar-links'>
                 {headers.map((el, index) => (
                     <li className='app__flex p-text' key={index}>
-                        <SmoothLink href={`#${el.link}`} onClick={handleScroll}>{el.name}</SmoothLink>
+                        <SmoothLink href={`#${el.link}`}>{el.name}</SmoothLink>
                         <div />
                     </li>
                 ))}

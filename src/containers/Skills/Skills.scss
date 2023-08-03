@@ -23,6 +23,9 @@
     width: 100%;
     display: block;
   }
+  @media screen and (min-width: 1200px) {
+    gap: 2rem;
+  }
 }
 
 .app__skills-exp {
@@ -31,10 +34,14 @@
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  padding-right: 2rem;
+  padding: 0 2rem 0 1rem;  
+  margin: 0 1rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.2) ;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 
   @media screen and (max-width: 900px) {
-    margin: 2rem 0 2rem 0;
+    margin: 2rem 1rem 2rem 1rem;
     padding-right: 0;
   }
 }
@@ -124,7 +131,7 @@
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, 0.2) ;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  margin: 1rem;
+  margin: 0 1rem;
 
   transition: all 0.3s ease-in-out;
 
@@ -137,9 +144,9 @@
     }
   }
 
-  @media screen and (max-width: 850px) {
-    width: 100%;
-  }
+  // @media screen and (max-width: 850px) {
+  //   width: 100%;
+  // }
 
   @media screen and (max-width: 600px) {
     flex-direction: column;

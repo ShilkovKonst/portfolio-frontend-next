@@ -8,8 +8,20 @@ type AnchorProps = Omit<
 type ScrollLinkProps = AnchorProps & LinkProps & PropsWithChildren;
 // component definition
 const SmoothLink = ({ children, ...props }: ScrollLinkProps) => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    //remove everything before the hash
+    const targetId = e.currentTarget.href.replace(/.*\#/, "");
+    const elem = document.getElementById(targetId);
+    const topPos = elem?.getBoundingClientRect().top
+    topPos &&
+        window.scrollTo({
+            top: topPos + window.scrollY,
+            behavior: "smooth",
+        });
+};
   return (
-    <Link {...props} onClick={props.onClick}>
+    <Link {...props} onClick={props.onClick ? props.onClick : handleScroll}>
       {children}
     </Link>
   );
