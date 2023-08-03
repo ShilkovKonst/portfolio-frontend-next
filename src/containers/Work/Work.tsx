@@ -49,7 +49,7 @@ const Work: React.FC = () => {
     client.fetch(query).then((data) => {
       setWorks(data)
       setFilterWorks(data)
-      const rawTags = data.map((el: work) => el.tags).flat()
+      const rawTags = data.map((el: work) => el.tags).flat().sort()
       setTags(rawTags.filter((el: string, i: number) => rawTags.indexOf(el) === i))
     })
   }, [])
@@ -78,7 +78,7 @@ const Work: React.FC = () => {
           className='app__work-item app__flex'
         >
           <div className='app__work-img app-flex'>
-            <Image alt={work.title} src={urlFor(work.imgUrl).url()} width={150} height={200} />
+            <Image alt={work.title} src={urlFor(work.imgUrl).url()} width={560} height={320} />
             <motion.div
               // initial={{ opacity: 0 }}
               whileHover={{ opacity: [0, 1] }}
@@ -98,18 +98,19 @@ const Work: React.FC = () => {
                   </motion.div>
                 </Link>
               }
-
-              <Link href={work.codeLink} target='_blank' rel='noreferrer'>
-                <motion.div
-                  // initial={{ scale: 0 }}
-                  whileInView={{ scale: [0, 1] }}
-                  whileHover={{ scale: [1, 0.9] }}
-                  transition={{ duration: 0.25 }}
-                  className='app__flex'
-                >
-                  <AiFillGithub />
-                </motion.div>
-              </Link>
+              {work.codeLink &&
+                <Link href={work.codeLink} target='_blank' rel='noreferrer'>
+                  <motion.div
+                    // initial={{ scale: 0 }}
+                    whileInView={{ scale: [0, 1] }}
+                    whileHover={{ scale: [1, 0.9] }}
+                    transition={{ duration: 0.25 }}
+                    className='app__flex'
+                  >
+                    <AiFillGithub />
+                  </motion.div>
+                </Link>
+              }
             </motion.div>
           </div>
           <div className='app__work-content app__flex'>

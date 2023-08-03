@@ -36,7 +36,7 @@ const Header: React.FC = () => {
           </div>
           <div className='tag-cmp app__flex'>
             <p className='p-text'>Développeur Web Fullstack</p>
-            <p className='p-text'>En recherche d&#39;alternance</p>
+            {/* <p className='p-text'>En recherche d&#39;alternance</p> */}
           </div>
         </div>
       </motion.div>

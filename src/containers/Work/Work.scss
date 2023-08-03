@@ -1,3 +1,9 @@
+#work {
+  .copyright {
+    display: none;
+  }
+}
+
 .app__works {
     flex: 1;
     width: 100%;
@@ -79,7 +85,6 @@
   
   .app__work-img {
     width: 100%;
-    height: 230px;
     position: relative;
   
     img {
@@ -89,10 +94,6 @@
       margin-right: auto;
       margin-top: auto;
       margin-bottom: auto;
-    }
-  
-    @media screen and (min-width: 2000px) {
-      height: 350px;
     }
   }
   

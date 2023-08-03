@@ -59,6 +59,7 @@ const Footer = () => {
       </div>
       {!isSubmitted ?
         <form className='app__footer-form app__flex'>
+          <h4 className='subhead-text'>Or by using this form</h4>
           <div className='app__flex'>
             <input className='p-text' type="text" placeholder='Your name' name='name' value={name} onChange={handleChangeInput} />
           </div>
@@ -80,4 +81,4 @@ const Footer = () => {
   )
 }
 
-export default AppWrap({ children: <Footer />, idName: 'contact', classBG: 'app__whitebg', classSection: 'app__footer' })
+export default AppWrap({ children: <Footer />, idName: 'contact', classBG: 'app__primarybg', classSection: 'app__footer' })

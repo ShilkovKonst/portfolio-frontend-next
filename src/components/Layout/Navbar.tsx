@@ -7,10 +7,25 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 import SmoothLink from '../SmoothLink'
 
-const headers = [{name: 'accueil', link: 'home'}, {name: 'à propos', link: 'about'}, {name: 'projets', link: 'work'}, {name: 'compétences', link: 'skills'}, {name: 'témoignage', link: 'testimonials'}, {name: 'contact', link: 'contact'}]
+const headers = [{ name: 'accueil', link: 'home' }, { name: 'à propos', link: 'about' }, { name: 'projets', link: 'work' }, { name: 'compétences', link: 'skills' }, { name: 'contact', link: 'contact' }]
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
+
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        e.preventDefault();
+        //remove everything before the hash
+        const targetId = e.currentTarget.href.replace(/.*\#/, "");
+        const elem = document.getElementById(targetId);
+        const topPos = elem?.getBoundingClientRect().top
+        topPos &&
+            window.scrollTo({
+                top: topPos + window.scrollY,
+                behavior: "smooth",
+            });
+        setToggle(false)
+    };
+    
     return (
         <nav className='app__navbar'>
             <div className='app__navbar-logo'>
@@ -19,7 +34,7 @@ const Navbar = () => {
             <ul className='app__navbar-links'>
                 {headers.map((el, index) => (
                     <li className='app__flex p-text' key={index}>
-                        <SmoothLink href={`#${el.link}`}>{el.name}</SmoothLink>
+                        <SmoothLink href={`#${el.link}`} onClick={handleScroll}>{el.name}</SmoothLink>
                         <div />
                     </li>
                 ))}
@@ -38,7 +53,7 @@ const Navbar = () => {
                             {headers.map((el, index) => (
                                 <li key={index}>
                                     <div />
-                                    <SmoothLink href={`#${el.link}`} onClick={() => setToggle(false)}>{el.name}</SmoothLink>
+                                    <SmoothLink href={`#${el.link}`} onClick={handleScroll}>{el.name}</SmoothLink>
                                 </li>
                             ))}
                         </ul>

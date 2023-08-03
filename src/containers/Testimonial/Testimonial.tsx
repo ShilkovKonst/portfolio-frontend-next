@@ -1,5 +1,5 @@
 'use client'
-import './Testimonial.scss'
+// import './Testimonial.scss'
 import React, { useEffect, useState } from 'react'
 import { AppWrap } from '@/wrapper'
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
