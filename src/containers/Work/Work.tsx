@@ -33,7 +33,6 @@ const Work: React.FC = () => {
 
   const handleWorkFilter = (tag: string) => {
     setActiveFilter(tag)
-
   }
 
   useEffect(() => {

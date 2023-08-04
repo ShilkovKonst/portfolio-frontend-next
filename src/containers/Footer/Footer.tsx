@@ -25,7 +25,8 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value })
   }
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
     if (name != '' && email != '' && message != '') {
       setIsLoading(true)
       const contact = {
@@ -71,7 +72,7 @@ const Footer = () => {
           <div>
             <textarea className='p-text' required placeholder='Votre message' name="message" value={message} onChange={handleChangeInput} />
           </div>
-          <button type='submit' onClick={handleSubmit}>{isLoading ? 'Envoi en cours...' : 'Envoyer le message'}</button>
+          <button type='submit'>{isLoading ? 'Envoi en cours...' : 'Envoyer le message'}</button>
         </form>
         :
         <div>
