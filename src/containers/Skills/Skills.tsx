@@ -124,7 +124,7 @@ const Skills: React.FC = () => {
                     <h5 className='p-text'>{testimonials[currIndex].name}</h5>
                 </div>
               </motion.div>
-              {testimonials.length > 1 && (
+              {testimonials.length > 0 && (
                 <div className='app__testimonial-btns app__flex'>
                   <div className='app__flex'
                     onClick={() => handleTestimonialSwitcherLeft(currIndex == testimonials.length - 1 ? 0 : currIndex + 1)}
