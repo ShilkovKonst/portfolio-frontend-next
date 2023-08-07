@@ -102,7 +102,7 @@ const About: React.FC = () => {
           </div>
           <div className='app__abouts-skills-activities'>
             <h3 className='subhead-text'>
-              Je deviens meilleur chaque jour
+              Maîtrise et progresse
             </h3>
             <div className=''>
               {activities.map((activity, i) => (
