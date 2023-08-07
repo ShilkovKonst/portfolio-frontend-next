@@ -116,7 +116,7 @@ const Skills: React.FC = () => {
                 className='app__testimonial-item'
               >
                 <div className='app__testimonial-content'>
-                  <p className='p-text'>{testimonials[currIndex].feedback}</p>
+                  <p className='p-text text-sm'>{testimonials[currIndex].feedback}</p>
                   
                 </div>
                 <div className='app__testimonial-footer'>
